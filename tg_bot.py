@@ -1,3 +1,4 @@
+import os
 import telebot
 import requests
 from main import send_message, hit, stand, GameData
@@ -13,10 +14,9 @@ def send_welcome(message):
 
 
 @bot.message_handler(commands=['newgame'])
-def start_new_game(message):
+def start_new_game(message, game_data):
     global game_data
-    game_data = GameData()
-    game_data.deck_id =         requests.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1').json()['deck_id']
+    game_data.deck_id = requests.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1').json()['deck_id']
 
     send_message(message, "Новая игра началась! Используйте /hit, чтобы взять карту")
 
