@@ -3,6 +3,7 @@ import telebot
 import requests
 from main import send_message, hit, stand, GameData
 
+
 telegram_token_bot = os.environ['TELEGRAM_BOT_TOKEN']
 bot = telebot.TeleBot(telegram_token_bot)
 game_data = GameData()
