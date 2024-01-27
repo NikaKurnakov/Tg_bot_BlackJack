@@ -1,3 +1,4 @@
+import os
 import telebot
 import requests
 from main import send_message, hit, stand, GameData
